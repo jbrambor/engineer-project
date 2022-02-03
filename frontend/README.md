@@ -23,3 +23,6 @@ open http://localhost:3000 to view it in your browser.
 
  - `npm run cypress` - open cypress window
  - `npm run cypress:dev` - runs test in development mode (only console)
+
+### Info
+- All test should be in `cypress/integration` folder
