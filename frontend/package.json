@@ -20,13 +20,9 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress": "start-server-and-test start:dev http://localhost:3000 cypress:open",
-    "cypress:dev": "start-server-and-test start:dev http://localhost:3000 cypress:run"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "cypress:dev": "start-server-and-test start:dev http://localhost:3000 cypress:run",
+    "lint": "eslint --color ./src",
+    "lint:fix": "eslint --fix ./src"
   },
   "browserslist": {
     "production": [
@@ -41,8 +37,18 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
     "@testing-library/cypress": "^8.0.2",
     "cypress": "^9.4.1",
+    "eslint": "^8.8.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.5",
     "start-server-and-test": "^1.14.0"
   }
 }
