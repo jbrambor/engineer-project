@@ -1,0 +1,141 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "jest/globals": true,
+        "cypress/globals": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:cypress/recommended",
+        "prettier"
+    ],
+    "parser": "@babel/eslint-parser",
+    "ignorePatterns": ["**/*.json"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["import", "jsx-a11y", "prettier"],
+    "overrides": [
+        {
+            "files": ["src/**/*.test.js"],
+            "extends": [
+                "plugin:jest/recommended",
+                "plugin:testing-library/react"
+            ],
+            "rules": {
+                "react/jsx-uses-react": "off",
+                "react/react-in-jsx-scope": "off"
+            }
+        }
+    ],
+    "root": true,
+    "rules": {
+        "indent": ["error", 4],
+        "eol-last": "error",
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "caseInsensitive": true,
+                    "order": "asc"
+                },
+                "newlines-between": "always",
+                "groups": [
+                    "builtin",
+                    "external",
+                    "index",
+                    "sibling",
+                    "parent",
+                    "internal"
+                ]
+            }
+        ],
+        "no-console": "warn",
+        "no-duplicate-imports": "error",
+        "no-restricted-imports": [
+            "error",
+            {
+                "paths": [
+                    {
+                        "message": "Please use import foo from 'lodash-es/foo' instead.",
+                        "name": "lodash"
+                    },
+                    {
+                        "message": "Avoid using chain since it is non tree-shakable. Try out flow instead.",
+                        "name": "lodash-es/chain"
+                    },
+                    {
+                        "importNames": ["chain"],
+                        "message": "Avoid using chain since it is non tree-shakable. Try out flow instead.",
+                        "name": "lodash-es"
+                    },
+                    {
+                        "message": "Please use import foo from 'lodash-es/foo' instead.",
+                        "name": "lodash-es"
+                    }
+                ],
+                "patterns": ["lodash/**", "lodash/fp/**"]
+            }
+        ],
+        "no-unused-vars": "error",
+        "object-curly-spacing": ["warn", "always"],
+        "react/jsx-curly-spacing": [
+            "warn",
+            {
+                "allowMultiline": true,
+                "children": {
+                    "when": "always"
+                }
+            }
+        ],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        ],
+        "react/jsx-indent": [
+            "error",
+            4,
+            {
+                "checkAttributes": true,
+                "indentLogicalExpressions": true
+            }
+        ],
+        "react/jsx-indent-props": ["error", 4],
+        "semi": "warn",
+        "react/prop-types": "warn",
+        "sort-imports": [
+            "warn",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false
+            }
+        ],
+        "sort-keys": [
+            "warn",
+            "asc",
+            {
+                "caseSensitive": true,
+                "minKeys": 2,
+                "natural": false
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
