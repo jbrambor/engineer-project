@@ -11,10 +11,6 @@ on:
 jobs:
   suite:
     runs-on: ubuntu-latest
-    build:
-      defaults:
-        run:
-          working-directory: frontend
 
     steps:
       - name: Checkout
@@ -30,10 +26,13 @@ jobs:
           start: npm start
 
       - name: run ESLint
+        working-directory: frontend
         run: npm run lint
 
       - name: run Prettier
+        working-directory: frontend
         run: npm run format:check
 
       - name: Run Jest
+        working-directory: frontend
         run: npm run test
