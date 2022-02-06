@@ -14,18 +14,14 @@ jobs:
 
     steps:
       - name: Checkout
-        working-directory: frontend
         uses: actions/checkout@v2
-        run: npm run build
 
       - name: Setup and run Cupress
-        working-directory: frontend
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
           headless: true
           start: npm start
-        run: npm run cypress:run
 
       - name: run ESLint
         working-directory: frontend
