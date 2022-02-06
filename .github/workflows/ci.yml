@@ -16,6 +16,7 @@ jobs:
       - name: Checkout
         working-directory: frontend
         uses: actions/checkout@v2
+        run: npm run build
 
       - name: Setup and run Cupress
         working-directory: frontend
@@ -24,6 +25,7 @@ jobs:
           browser: chrome
           headless: true
           start: npm start
+        run: npm run cypress:run
 
       - name: run ESLint
         working-directory: frontend
