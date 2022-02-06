@@ -11,10 +11,6 @@
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },
-  "lint-staged": {
-    "*.js": "eslint --color ./src",
-    "*.{js,css,md}": "prettier --write ./src"
-  },
   "scripts": {
     "start": "react-scripts start",
     "start:dev": "set BROWSER=none&& react-scripts start",
@@ -60,6 +56,10 @@
     "lint-staged": "^12.3.3",
     "prettier": "^2.5.1",
     "start-server-and-test": "^1.14.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --color ./src",
+    "*.{js,css,md}": "prettier --write ./src"
   },
   "husky": {
     "hooks": {
