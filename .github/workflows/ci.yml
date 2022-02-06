@@ -9,11 +9,12 @@ on:
       - main
 
 jobs:
-  runs-on: ubuntu-latest
-  build:
-    defaults:
-      run:
-        working-directory: frontend
+  suite:
+    runs-on: ubuntu-latest
+    build:
+      defaults:
+        run:
+          working-directory: frontend
 
     steps:
       - name: Checkout
