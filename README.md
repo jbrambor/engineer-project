@@ -7,3 +7,4 @@
 - Krzysztof Wieczorek - UX/UI Designer
 
 
+. 
