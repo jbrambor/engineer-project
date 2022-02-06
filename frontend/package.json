@@ -23,7 +23,8 @@
     "cypress:dev": "start-server-and-test start:dev http://localhost:3000 cypress:run",
     "lint": "eslint --color ./src",
     "lint:fix": "eslint --fix ./src",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "prepare": "cd ../ && husky install ./frontend/.husky"
   },
   "browserslist": {
     "production": [
@@ -56,14 +57,5 @@
     "lint-staged": "^12.3.3",
     "prettier": "^2.5.1",
     "start-server-and-test": "^1.14.0"
-  },
-  "lint-staged": {
-    "*.js": "eslint --color ./src",
-    "*.{js,css,md}": "prettier --write ./src"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

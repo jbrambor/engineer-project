@@ -1,0 +1,3 @@
+{
+  "*.{js,ts,tsx,scss,css}": ["eslint --color ./src", "prettier --write ./src"]
+}
