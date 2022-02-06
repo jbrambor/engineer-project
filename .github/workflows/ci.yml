@@ -16,11 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup and run Cupress
+      - name: Setup and run Cypress
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
           headless: true
+          working-directory: frontend
           start: npm start
 
       - name: run ESLint
