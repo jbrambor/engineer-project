@@ -12,7 +12,8 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "prettier"
   ],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
@@ -24,7 +25,8 @@
   },
   "plugins": [
     "import",
-    "jsx-a11y"
+    "jsx-a11y",
+    "prettier"
   ],
   "overrides": [
     {
@@ -96,11 +98,7 @@
         "allowMultiline": true,
         "children": {
           "when": "always"
-        },
-        "spacing": {
-          "objectLiterals": "always"
-        },
-        "when": "always"
+        }
       }
     ],
     "react/jsx-filename-extension": [
