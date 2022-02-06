@@ -1,0 +1,38 @@
+name: Run linters and tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  runs-on: ubuntu-latest
+  build:
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout
+        working-directory: frontend
+        uses: actions/checkout@v2
+
+      - name: Setup and run Cupress
+        working-directory: frontend
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm start
+
+      - name: run ESLint
+        run: npm run lint
+
+      - name: run Prettier
+        run: npm run format:check
+
+      - name: Run Jest
+        run: npm run test
