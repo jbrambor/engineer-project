@@ -12,10 +12,8 @@
     "web-vitals": "^2.1.4"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint --color ./src",
-      "prettier --write ./src"
-    ]
+    "*.js": "eslint --color ./src",
+    "*.{js,css,md}": "prettier --write ./src"
   },
   "scripts": {
     "start": "react-scripts start",
