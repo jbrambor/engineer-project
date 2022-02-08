@@ -122,15 +122,6 @@
                 "ignoreDeclarationSort": true,
                 "ignoreMemberSort": false
             }
-        ],
-        "sort-keys": [
-            "warn",
-            "asc",
-            {
-                "caseSensitive": true,
-                "minKeys": 2,
-                "natural": false
-            }
         ]
     },
     "settings": {

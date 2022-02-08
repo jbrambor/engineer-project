@@ -1,3 +1,4 @@
+import { ThemeProvider, theme } from "modules/uiTheme";
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -7,7 +8,9 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
     </React.StrictMode>,
     document.getElementById("root"),
 );
