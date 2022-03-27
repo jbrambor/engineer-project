@@ -1,25 +1,22 @@
+// import {theme} from 'modules/uiTheme/theme';
+import HeaderImage from "components/HeaderImage/HeaderImage";
+import Navbar from "components/Navbar/Navbar";
+import ReccommendedOffers from "components/RecommendedOffers/RecommendedOffers";
+import SearchBar from "components/SearchOffers/SearchOffers";
+import TopRated from "components/TopRated/TopRated";
 import React from "react";
 
-import logo from "./logo.svg";
 import "./App.css";
+
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <Navbar/>
+            <HeaderImage href="/" alt=""/>
+            <SearchBar/>
+            <TopRated/>
+            <ReccommendedOffers/>
         </div>
     );
 }
