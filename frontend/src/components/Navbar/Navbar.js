@@ -5,8 +5,7 @@ import NavbarLogo from './Logo';
 import NavbarElement from './NavbarElements';
 import NavbarPage from './NavbarPages';
 function Navbar() {
-    return (
-        
+    return (    
         <nav className='nav' 
             style={{
                 height: '80px',
@@ -33,7 +32,9 @@ function Navbar() {
                             
                         </div>
                         <div className='nav__right--links'>
-                            <NavbarElement page="/page" pageTitle="Help Center" href="/" alt=""/>
+                            <NavbarElement  page="/page" pageTitle="Help Center" href="/" alt="">
+                            
+                            </NavbarElement>
                             <NavbarElement page="/page" pageTitle="Favourites" href="/" alt=""/>
                             <NavbarElement page="/page" pageTitle="Login" href="/" alt=""/>
 

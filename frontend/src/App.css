@@ -25,9 +25,20 @@ a {
 
 .header {
     height: 294px;
-    background-color: black;
+    z-index: -1;
 }
 
+.header__image img {
+    width: 100%;
+    object-fit: cover;
+} 
+
+.header__image {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
 .search {
     margin-top: -100px;
     height: 200px;
@@ -60,7 +71,7 @@ a {
     min-width: 120px;
 
 }
-.promoted__title {
+.promoted__title, .recommended__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,13 +91,13 @@ a {
     align-items: center;
 }
 
-.promoted__slider {
+.promoted__slider, .recommended__slider {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
-.promoted__slider--card {
+.promoted__slider--card, .recommended__slider--card {
     max-width: 312px;
     margin-bottom: 24px;
     overflow: hidden;
@@ -94,37 +105,37 @@ a {
     border: 1px solid #C6CCD2;
 }
 
-.promoted__slider--card .card-img {
+.promoted__slider--card .card-img, .recommended__slider--card .card-img {
     max-height: 175px;
     overflow: hidden;
 }
 
-.promoted__slider--card .card-img img {
+.promoted__slider--card .card-img img, .recommended__slider--card .card-img img  {
     width: 100%;
     object-fit: cover;
     margin-top:-20px;
 }
 
-.promoted__slider--card .card-title, .promoted__slider--card .card-details, .card-description {
+.promoted__slider--card .card-title, .promoted__slider--card .card-details, .card-description, .recommended__slider--card .card-title, .recommended__slider--card .card-details {
     padding: 0px 24px;
 } 
 
-.promoted__slider--card .card-title {
+.promoted__slider--card .card-title, .recommended__slider--card .card-title {
     display: flex;
     justify-content: space-between;
 }
 
-.promoted__slider--card .card-title h3 {
+.promoted__slider--card .card-title h3, .recommended__slider--card .card-title h3 {
     font-size: 18px;
     margin-bottom: 0px;
 } 
 
-.promoted__slider--card .card-details p {
+.promoted__slider--card .card-details p, .recommended__slider--card .card-details p  {
     margin-top: 0px;
     font-size: 14px;
 } 
 
-.promoted__slider--card .card-details {
+.promoted__slider--card .card-details, .recommended__slider--card .card-details {
     margin-bottom: 40px;
 }
 
@@ -139,7 +150,7 @@ a {
     margin-bottom: 24px;
 }
 
-.recommended__offers .first-offer .promoted__slider--card {
+.recommended__offers .first-offer .recommended__slider--card {
     max-width: 100%;
     height: 100%;
 }
@@ -152,4 +163,109 @@ a {
 
 .recommended__offers .first-offer .card-img {
     max-height: 274px;
+}
+
+.blog__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.blog__last {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.blog__last--card {
+    max-width: 312px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #C6CCD2;
+    overflow: hidden;
+}
+
+.blog__last--card .card-img {
+    max-height: 175px;
+    overflow: hidden;
+}
+
+.blog__last--card .card-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog__last--card .card-category, .blog__last--card .card-title, .blog__last--card .card-description, .blog__last--card .card-button {
+    padding: 0px 24px;
+}
+
+.blog__last--card .card-category {
+    margin-top: 16px;
+}
+
+.blog__last--card .card-category span {
+    border-radius: 32px;
+    border: 1px solid #B3D7FB;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #F5FAFF;
+    padding: 8px 16px;
+}
+
+.blog__last--card .card-button {
+    margin: 16px 0px;
+    height: 54px;
+    text-transform: uppercase;
+    display: flex;
+
+}
+
+.blog__last--card .card-button a {
+
+    color: #105293;
+    font-weight: 700;
+    padding: 16px;
+}
+
+.newsletter {
+    padding: 48px 0px;
+}
+
+.newsletter .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.newsletter .newsletter__title h2 {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+.newsletter .newsletter__subtitle p {
+    color: #fff;
+}
+
+.newsletter form {
+    display: flex;
+}
+
+.newsletter form input {
+    margin: 0px 20px;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+.newsletter form input[type="text"] {
+    border: 1px solid #C6CCD2
+}
+.newsletter form input[type="submit"] {
+    background-color: #E4780C;
+    color: #fff;
+    text-transform: uppercase;
 }
