@@ -1,0 +1,16 @@
+.header {
+    height: 294px;
+    z-index: -1;
+    &__image img {
+        width: 100%;
+        object-fit: cover;
+    } 
+    
+    &__image {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+}
+

@@ -1,0 +1,28 @@
+.container {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@import './scss/variables/variables';
+@import './scss/components/navbar';
+@import './scss/components/header';
+@import './scss/components/newsletter';
+
+@import './scss/pages/homepage';
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.section-title {
+    font-size: 32px;
+}
+
+.section-all {
+    border-bottom: 2px solid #73808C;
+    text-transform: uppercase;
+    color: #73808C;
+    font-weight: 700;
+}
+
+

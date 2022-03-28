@@ -9,7 +9,7 @@ import TopRated from "components/TopRated/TopRated";
 import HeaderImg from "images/header-img.jpg";
 import React from "react";
 
-import "./App.css";
+import "./App.scss";
 
 
 function App() {
