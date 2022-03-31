@@ -8,10 +8,10 @@
     &__left--logo {
         margin-right: 24px;
     }
-    &__left--menu, &__right--links {
+    &__left--menu,
+    &__right--links {
         a {
             margin: 0px 16px;
-
         }
     }
 }

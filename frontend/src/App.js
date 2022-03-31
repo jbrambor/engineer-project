@@ -11,17 +11,22 @@ import React from "react";
 
 import "./App.scss";
 
-
 function App() {
     return (
         <div className="App">
-            <Navbar/>
-            <HeaderImage src={HeaderImg} alt=""/>
-            <SearchBar/>
-            <TopRated/>
-            <ReccommendedOffers/>
-            <Blog/>
-            <Newsletter title="Newsletter" subtitle="Subscribe Our Newsletter!" input="text" inputPlaceholder="Email address" submitValue="Subscribe"/>
+            <Navbar />
+            <HeaderImage src={HeaderImg} alt="" />
+            <SearchBar />
+            <TopRated />
+            <ReccommendedOffers />
+            <Blog />
+            <Newsletter
+                title="Newsletter"
+                subtitle="Subscribe Our Newsletter!"
+                input="text"
+                inputPlaceholder="Email address"
+                submitValue="Subscribe"
+            />
         </div>
     );
 }

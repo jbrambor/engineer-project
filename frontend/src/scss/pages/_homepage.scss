@@ -13,7 +13,7 @@
     }
     &__data--input {
         border-radius: 8px;
-        border: 1px solid #C6CCD2;
+        border: 1px solid #c6ccd2;
         padding: 16px;
         margin: 0px 12px;
     }
@@ -31,7 +31,8 @@
     }
 }
 
-.promoted, .recommended {
+.promoted,
+.recommended {
     &__title {
         display: flex;
         justify-content: space-between;
@@ -47,7 +48,7 @@
             margin-bottom: 24px;
             overflow: hidden;
             border-radius: 8px;
-            border: 1px solid #C6CCD2;
+            border: 1px solid #c6ccd2;
             .card-img {
                 max-height: 175px;
                 overflow: hidden;
@@ -57,7 +58,9 @@
                     margin-top: -40px;
                 }
             }
-            .card-details, .card-description, .card-title {
+            .card-details,
+            .card-description,
+            .card-title {
                 padding: 0px 24px;
             }
             .card-title {
@@ -78,7 +81,6 @@
         }
     }
 }
-
 
 .recommended {
     &__offers {
@@ -120,7 +122,7 @@
             border-radius: 8px;
             display: flex;
             flex-direction: column;
-            border: 1px solid #C6CCD2;
+            border: 1px solid #c6ccd2;
             overflow: hidden;
             margin-bottom: 24px;
             .card-img {
@@ -132,17 +134,20 @@
                     object-fit: cover;
                 }
             }
-            .card-category, .card-title, .card-description, .card-button {
+            .card-category,
+            .card-title,
+            .card-description,
+            .card-button {
                 padding: 0px 24px;
             }
             .card-category {
                 margin-top: 16px;
                 span {
                     border-radius: 32px;
-                    border: 1px solid #B3D7FB;
+                    border: 1px solid #b3d7fb;
                     text-transform: uppercase;
                     font-weight: 700;
-                    background-color: #F5FAFF;
+                    background-color: #f5faff;
                     padding: 8px 16px;
                 }
             }

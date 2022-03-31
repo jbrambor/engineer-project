@@ -1,18 +1,16 @@
 import SectionTitle from "components/SectionTitle/SectionTitle";
 import React from "react";
-import { Link, BrowserRouter  as Router} from "react-router-dom";
+import { Link, BrowserRouter as Router } from "react-router-dom";
 
 import RecommendedSingle from "./RecommendedSingle";
 
-
-
-import HotelImage from '../../images/hotel.png';
+import HotelImage from "../../images/hotel.png";
 
 function ReccommendedOffers() {
     return (
         <div className="container recommended">
             <div className="recommended__title">
-                <SectionTitle name="Selected for you"/>
+                <SectionTitle name="Selected for you" />
                 <Router>
                     <Link to="/" className="section-all">
                         View all
@@ -21,27 +19,64 @@ function ReccommendedOffers() {
             </div>
             <div className="recommended__offers">
                 <Router>
-
                     <div className="first-offer">
-                        <RecommendedSingle href="/" src={HotelImage} alt="offer" title="Golden Cherry" price="1785" value="PLN" country="Spain" description="The Golden Cherry is a modern, elegant 4-star hotel overlooking the sea, perfect for a romantic, charming vacation, in the enchanting setting of Taormina and the Ionian Sea.
+                        <RecommendedSingle
+                            href="/"
+                            src={HotelImage}
+                            alt="offer"
+                            title="Golden Cherry"
+                            price="1785"
+                            value="PLN"
+                            country="Spain"
+                            description="The Golden Cherry is a modern, elegant 4-star hotel overlooking the sea, perfect for a romantic, charming vacation, in the enchanting setting of Taormina and the Ionian Sea.
 
                         The rooms at the Panoramic Hotel are new, well-lit and inviting. Our reception staff will be happy to help you during your stay in Taormina, suggesting itineraries, guided visits and some good restaurants in the historic centre.
 
-                        At the end of a stairway across from the hotel, the white pebbles on the beach... Read More">
-                        </RecommendedSingle>
-                        
+                        At the end of a stairway across from the hotel, the white pebbles on the beach... Read More"
+                        ></RecommendedSingle>
                     </div>
                     <div className="all-offers">
-                        <RecommendedSingle href="/" src={HotelImage} alt="offer" title="Aquamrais Hotel" price="1200" value="PLN" country="Egypt"/>
-                        <RecommendedSingle href="/" src={HotelImage} alt="offer" title="Aquamrais Hotel" price="1200" value="PLN" country="Egypt"/>
-                        <RecommendedSingle href="/" src={HotelImage} alt="offer" title="Aquamrais Hotel" price="1200" value="PLN" country="Egypt"/>
-                        <RecommendedSingle href="/" src={HotelImage} alt="offer" title="Aquamrais Hotel" price="1200" value="PLN" country="Egypt"/>
-
+                        <RecommendedSingle
+                            href="/"
+                            src={HotelImage}
+                            alt="offer"
+                            title="Aquamrais Hotel"
+                            price="1200"
+                            value="PLN"
+                            country="Egypt"
+                        />
+                        <RecommendedSingle
+                            href="/"
+                            src={HotelImage}
+                            alt="offer"
+                            title="Aquamrais Hotel"
+                            price="1200"
+                            value="PLN"
+                            country="Egypt"
+                        />
+                        <RecommendedSingle
+                            href="/"
+                            src={HotelImage}
+                            alt="offer"
+                            title="Aquamrais Hotel"
+                            price="1200"
+                            value="PLN"
+                            country="Egypt"
+                        />
+                        <RecommendedSingle
+                            href="/"
+                            src={HotelImage}
+                            alt="offer"
+                            title="Aquamrais Hotel"
+                            price="1200"
+                            value="PLN"
+                            country="Egypt"
+                        />
                     </div>
                 </Router>
             </div>
         </div>
-    )
+    );
 }
 
 export default ReccommendedOffers;
