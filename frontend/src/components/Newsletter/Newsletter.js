@@ -11,10 +11,10 @@ function Newsletter(newsletter) {
         >
             <div className="container">
                 <div className="newsletter__title">
-                    <h2>{newsletter.title}</h2>
+                    <h2>{ newsletter.title }</h2>
                 </div>
                 <div className="newsletter__subtitle">
-                    <p>{newsletter.subtitle}</p>
+                    <p>{ newsletter.subtitle }</p>
                 </div>
                 <div className="newsletter__form">
                     <form>

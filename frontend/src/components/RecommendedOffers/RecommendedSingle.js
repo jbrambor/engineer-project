@@ -9,16 +9,16 @@ function RecommendedSingle(card) {
                     <img src={card.src} alt={card.alt}></img>
                 </div>
                 <div className="card-title">
-                    <h3>{card.title}</h3>
+                    <h3>{ card.title }</h3>
                     <h3>
-                        {card.price} {card.value}
+                        { card.price } { card.value }
                     </h3>
                 </div>
                 <div className="card-details">
-                    <p>{card.country}</p>
+                    <p>{ card.country }</p>
                 </div>
                 <div className="card-description">
-                    <p>{card.description}</p>
+                    <p>{ card.description }</p>
                 </div>
             </Link>
         </div>

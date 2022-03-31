@@ -15,14 +15,14 @@ function BlogSingle(blog) {
                             color: `${theme.colors.primary40}`,
                         }}
                     >
-                        {blog.category}
+                        { blog.category }
                     </span>
                 </div>
                 <div className="card-title">
-                    <h3>{blog.title}</h3>
+                    <h3>{ blog.title }</h3>
                 </div>
                 <div className="card-description">
-                    <p>{blog.description}</p>
+                    <p>{ blog.description }</p>
                 </div>
                 <div className="card-button">
                     <Link to={blog.href}>Read more</Link>

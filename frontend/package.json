@@ -59,7 +59,7 @@
         "eslint-plugin-testing-library": "^5.0.5",
         "husky": "^7.0.4",
         "lint-staged": "^12.3.3",
-        "prettier": "^2.5.1",
+        "prettier": "^1.12.1",
         "react-router-dom": "^6.2.2",
         "sass": "^1.49.9",
         "start-server-and-test": "^1.14.0"
