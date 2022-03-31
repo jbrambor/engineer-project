@@ -1,14 +1,15 @@
+@import "./scss/components/navbar";
+@import "./scss/components/header";
+@import "./scss/components/newsletter";
+
+@import "./scss/pages/homepage";
+
 .container {
     max-width: 1320px;
     margin-left: auto;
     margin-right: auto;
 }
-@import './scss/variables/variables';
-@import './scss/components/navbar';
-@import './scss/components/header';
-@import './scss/components/newsletter';
 
-@import './scss/pages/homepage';
 a {
     color: #000;
     text-decoration: none;
@@ -19,10 +20,12 @@ a {
 }
 
 .section-all {
-    border-bottom: 2px solid #73808C;
+    border-bottom: 2px solid #73808c;
     text-transform: uppercase;
-    color: #73808C;
+    color: #73808c;
     font-weight: 700;
 }
 
-
+.actiove {
+    color: red;
+}
