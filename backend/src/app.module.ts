@@ -1,7 +1,14 @@
 import { Module } from '@nestjs/common';
 
+import { configEnv } from './config/env.config';
+
+import { PostgresqlModule } from './modules/database/postgresql.module';
+
 @Module({
-  imports: [],
+  imports: [
+    configEnv(),
+    PostgresqlModule,
+  ],
   controllers: [],
   providers: [],
 })
