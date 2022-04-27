@@ -2,7 +2,7 @@ import { theme } from "modules/uiTheme/theme";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BlogSingle(blog) {
+const BlogSingle = (blog) => {
     return (
         <div className="blog__last--card">
             <Link to={blog.href}>
@@ -30,6 +30,6 @@ function BlogSingle(blog) {
             </Link>
         </div>
     );
-}
+};
 
 export default BlogSingle;

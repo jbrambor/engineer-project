@@ -2,53 +2,53 @@ import SectionTitle from "components/SectionTitle/SectionTitle";
 import React from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
-import BlogSingle from "./BlogSingle";
+import PopularPlacesSingle from "./PopularPlacesSingle";
 
-import BlogImage from "../../images/hotel.png";
+import PopularPlaceImage from "../../images/hotel.png";
 
-const Blog = () => {
+const PopularPlaces = () => {
     return (
-        <div className="container blog">
-            <div className="blog__title">
-                <SectionTitle name="Blog" />
+        <div className="container popular">
+            <div className="popular__title">
+                <SectionTitle name="Popular Places" />
                 <Router>
                     <Link to="/" className="section-all">
                         View all
                     </Link>
                 </Router>
             </div>
-            <div className="blog__last">
+            <div className="popular__last">
                 <Router>
-                    <BlogSingle
+                    <PopularPlacesSingle
                         href="/"
-                        src={BlogImage}
+                        src={PopularPlaceImage}
                         alt=""
-                        category="Travel"
-                        title="The most popular destination in Africa"
+                        country="Zanzibar"
+                        title="RedFlag Hotel"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     />
-                    <BlogSingle
+                    <PopularPlacesSingle
                         href="/"
-                        src={BlogImage}
+                        src={PopularPlaceImage}
                         alt=""
-                        category="Guidelines"
-                        title="What should I take to USA?"
+                        country="France"
+                        title="Fiesto Hotel"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     />
-                    <BlogSingle
+                    <PopularPlacesSingle
                         href="/"
-                        src={BlogImage}
+                        src={PopularPlaceImage}
                         alt=""
-                        category="safety"
-                        title="Vacation in COVID-19 pandemic times"
+                        country="Ukraine"
+                        title="Thundermine"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     />
-                    <BlogSingle
+                    <PopularPlacesSingle
                         href="/"
-                        src={BlogImage}
+                        src={PopularPlaceImage}
                         alt=""
-                        category="safety"
-                        title="Vacation in COVID-19 pandemic times"
+                        country="Ukraine"
+                        title="Triumph"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     />
                 </Router>
@@ -57,4 +57,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default PopularPlaces;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function RecommendedSingle(card) {
+const RecommendedSingle = (card) => {
     return (
         <div className="recommended__slider--card">
             <Link to={card.href}>
@@ -23,6 +23,6 @@ function RecommendedSingle(card) {
             </Link>
         </div>
     );
-}
+};
 
 export default RecommendedSingle;

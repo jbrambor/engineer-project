@@ -1,6 +1,7 @@
 @import "./scss/components/navbar";
 @import "./scss/components/header";
 @import "./scss/components/newsletter";
+@import "./scss/components/footer";
 
 @import "./scss/pages/homepage";
 
@@ -26,6 +27,6 @@ a {
     font-weight: 700;
 }
 
-.actiove {
+.active {
     color: red;
 }

@@ -1,24 +1,25 @@
-.footer{
+.footer {
     padding: 56px 0;
-    &__content{
-        &--main{
+    color: #fff;
+    &__content {
+        &--main {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             margin-bottom: 72px;
-            &-menu_group{
+            &-menu_group {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 min-width: 549px;
             }
 
-            &-menu{
+            &-menu {
                 margin: 0;
                 padding: 0;
                 list-style: none;
 
-                &_title{
+                &_title {
                     color: #fff;
                     text-transform: uppercase;
                     font-size: 14px;
@@ -28,22 +29,22 @@
                     margin-bottom: 8px;
                 }
 
-                &_link{
-                    color: #F9FAFA;
+                &_link {
+                    color: #f9fafa;
                     font-size: 14px;
                     font-weight: 400;
                     line-height: 24px;
                     letter-spacing: 4%;
                     margin-bottom: 8px;
 
-                    &:last-child{
+                    &:last-child {
                         margin-bottom: 0;
                     }
                 }
             }
 
-            &-contact{
-                &_title{
+            &-contact {
+                &_title {
                     color: #fff;
                     text-transform: uppercase;
                     font-size: 14px;
@@ -52,8 +53,8 @@
                     letter-spacing: 4%;
                     margin-bottom: 8px;
                 }
-                &_address{
-                    color: #F9FAFA;
+                &_address {
+                    color: #f9fafa;
                     font-size: 14px;
                     font-weight: 400;
                     line-height: 24px;
@@ -64,26 +65,26 @@
                     display: flex;
                     flex-direction: column;
 
-                    &-city{
+                    &-city {
                         display: flex;
                         flex-direction: column;
                         margin-bottom: 8px;
                     }
-                    &-contact{
+                    &-contact {
                         display: flex;
                         flex-direction: column;
-                        a{
-                            color: #F9FAFA;
+                        a {
+                            color: #f9fafa;
                         }
                     }
                 }
-                &_socials{
+                &_socials {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    &-logo{
+                    &-logo {
                         margin-right: 24px;
-                        &:last-child{
+                        &:last-child {
                             margin-right: 0;
                         }
                     }
@@ -91,7 +92,7 @@
             }
         }
 
-        &--footnote{
+        &--footnote {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -101,12 +102,12 @@
             -webkit-box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
             -moz-box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
             box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
-            &-copyright{
+            &-copyright {
                 font-size: 12px;
                 line-height: 16px;
-                color: #F9FAFA;
+                color: #f9fafa;
             }
-            &-terms{
+            &-terms {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -115,17 +116,16 @@
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                &-single_term{
+                &-single_term {
                     font-size: 12px;
                     line-height: 16px;
-                    color: #F9FAFA;
+                    color: #f9fafa;
                     margin-right: 16px;
-                    &:last-child{
+                    &:last-child {
                         margin-right: 0;
                     }
                 }
             }
         }
     }
-
 }

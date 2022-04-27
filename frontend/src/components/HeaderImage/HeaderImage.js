@@ -1,6 +1,6 @@
 import React from "react";
 
-function HeaderImage(image) {
+const HeaderImage = (image) => {
     return (
         <header className="header">
             <div className="header__image">
@@ -8,6 +8,6 @@ function HeaderImage(image) {
             </div>
         </header>
     );
-}
+};
 
 export default HeaderImage;

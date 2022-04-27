@@ -1,7 +1,7 @@
 import { theme } from "modules/uiTheme/theme";
 import React from "react";
 
-function Newsletter(newsletter) {
+const Newsletter = (newsletter) => {
     return (
         <div
             className="newsletter"
@@ -28,6 +28,6 @@ function Newsletter(newsletter) {
             </div>
         </div>
     );
-}
+};
 
 export default Newsletter;

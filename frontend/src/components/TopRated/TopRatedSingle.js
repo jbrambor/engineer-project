@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function OfferSingle(card) {
+const TopRatedSingle = (card) => {
     return (
         <div className="promoted__slider--card">
             <Link to={card.href}>
@@ -25,4 +25,4 @@ function OfferSingle(card) {
     );
 }
 
-export default OfferSingle;
+export default TopRatedSingle;

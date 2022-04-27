@@ -10,7 +10,9 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-scripts": "5.0.0",
+        "react-slick": "^0.29.0",
         "sass-loader": "^12.6.0",
+        "slick-carousel": "^1.8.1",
         "styled-components": "^5.3.3",
         "web-vitals": "^2.1.4"
     },
@@ -46,6 +48,7 @@
         "@babel/eslint-parser": "^7.17.0",
         "@babel/preset-react": "^7.16.7",
         "@testing-library/cypress": "^8.0.2",
+        "axios": "^0.26.1",
         "cypress": "^9.4.1",
         "eslint": "^8.8.0",
         "eslint-config-prettier": "^8.3.0",

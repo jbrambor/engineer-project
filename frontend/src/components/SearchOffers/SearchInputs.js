@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchInput(input) {
+const SearchInput = (input) => {
     return (
         <div className="input">
             <input
@@ -11,6 +11,6 @@ function SearchInput(input) {
             ></input>
         </div>
     );
-}
+};
 
 export default SearchInput;

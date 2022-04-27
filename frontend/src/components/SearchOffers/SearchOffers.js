@@ -4,7 +4,7 @@ import React from "react";
 import SearchInput from "./SearchInputs";
 import SearchSubmit from "./SearchSubmit";
 
-function SearchBar() {
+const SearchBar = () => {
     return (
         <div className="container">
             <div
@@ -27,6 +27,6 @@ function SearchBar() {
             </div>
         </div>
     );
-}
+};
 
 export default SearchBar;

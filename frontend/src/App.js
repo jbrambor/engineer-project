@@ -1,8 +1,10 @@
 // import {theme} from 'modules/uiTheme/theme';
 import Blog from "components/Blog/Blog";
+import Footer from "components/Footer/Footer";
 import HeaderImage from "components/HeaderImage/HeaderImage";
 import Navbar from "components/Navbar/Navbar";
 import Newsletter from "components/Newsletter/Newsletter";
+import PopularPlaces from "components/PopularPlaces/PopularPlaces";
 import ReccommendedOffers from "components/RecommendedOffers/RecommendedOffers";
 import SearchBar from "components/SearchOffers/SearchOffers";
 import TopRated from "components/TopRated/TopRated";
@@ -20,6 +22,7 @@ function App() {
             <TopRated />
             <ReccommendedOffers />
             <Blog />
+            <PopularPlaces />
             <Newsletter
                 title="Newsletter"
                 subtitle="Subscribe Our Newsletter!"
@@ -27,6 +30,7 @@ function App() {
                 inputPlaceholder="Email address"
                 submitValue="Subscribe"
             />
+            <Footer />
         </div>
     );
 }

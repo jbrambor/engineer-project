@@ -39,7 +39,6 @@
         align-items: center;
     }
     &__slider {
-        display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
         flex-wrap: wrap;
@@ -106,7 +105,8 @@
     }
 }
 
-.blog {
+.blog,
+.popular {
     &__title {
         display: flex;
         justify-content: space-between;
@@ -137,7 +137,8 @@
             .card-category,
             .card-title,
             .card-description,
-            .card-button {
+            .card-button,
+            .card-country {
                 padding: 0px 24px;
             }
             .card-category {
@@ -162,6 +163,14 @@
                     padding: 16px;
                 }
             }
+        }
+    }
+}
+
+.card-title {
+    h3 {
+        &:nth-child(1) {
+            flex: .8
         }
     }
 }

@@ -6,7 +6,7 @@ import RecommendedSingle from "./RecommendedSingle";
 
 import HotelImage from "../../images/hotel.png";
 
-function ReccommendedOffers() {
+const ReccommendedOffers = () => {
     return (
         <div className="container recommended">
             <div className="recommended__title">
@@ -77,6 +77,6 @@ function ReccommendedOffers() {
             </div>
         </div>
     );
-}
+};
 
 export default ReccommendedOffers;

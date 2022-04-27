@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import NavbarLogo from "./Logo";
 import NavbarElement from "./NavbarElements";
 import NavbarPage from "./NavbarPages";
-function Navbar() {
+const Navbar = () => {
     return (
         <nav
             className="nav"
@@ -60,6 +60,6 @@ function Navbar() {
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;

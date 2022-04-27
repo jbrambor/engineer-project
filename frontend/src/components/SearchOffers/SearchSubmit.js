@@ -1,7 +1,7 @@
 import { theme } from "modules/uiTheme/theme";
 import React from "react";
 
-function SearchSubmit(input) {
+const SearchSubmit = (input) => {
     return (
         <div className="input">
             <input
@@ -15,6 +15,6 @@ function SearchSubmit(input) {
             ></input>
         </div>
     );
-}
+};
 
 export default SearchSubmit;
