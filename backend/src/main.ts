@@ -1,8 +1,15 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import App from './config/App';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-}
-bootstrap();
+import { config } from 'dotenv';
+
+import { HotelController } from './Controllers/hotel.controller';
+
+config();
+
+const app = new App([
+    HotelController,
+]);
+
+const { PORT } = process.env;
+
+app.listen(Number(PORT));
