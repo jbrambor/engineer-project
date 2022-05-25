@@ -1,12 +1,28 @@
+import axios from "axios";
 import SectionTitle from "components/SectionTitle/SectionTitle";
-import React from "react";
+import { settings } from "components/Slider/settings";
+import { React, useEffect, useState } from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
+import Slider from "react-slick";
 
 import PopularPlacesSingle from "./PopularPlacesSingle";
 
-import PopularPlaceImage from "../../images/hotel.png";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const PopularPlaces = () => {
+    const [hotels, setHotels] = useState([]);
+    const GetDataFromAPI = (endpoint) => {
+        axios.get(`${endpoint}`)
+            .then((response) => {
+                const hotelsResults = response.data.slice(30, 50);
+                setHotels(hotelsResults);
+            });
+    }; 
+
+    useEffect(() => GetDataFromAPI('http://fake-hotel-api.herokuapp.com/api/hotels'), []);
+    
     return (
         <div className="container popular">
             <div className="popular__title">
@@ -19,38 +35,17 @@ const PopularPlaces = () => {
             </div>
             <div className="popular__last">
                 <Router>
-                    <PopularPlacesSingle
-                        href="/"
-                        src={PopularPlaceImage}
-                        alt=""
-                        country="Zanzibar"
-                        title="RedFlag Hotel"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    />
-                    <PopularPlacesSingle
-                        href="/"
-                        src={PopularPlaceImage}
-                        alt=""
-                        country="France"
-                        title="Fiesto Hotel"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    />
-                    <PopularPlacesSingle
-                        href="/"
-                        src={PopularPlaceImage}
-                        alt=""
-                        country="Ukraine"
-                        title="Thundermine"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    />
-                    <PopularPlacesSingle
-                        href="/"
-                        src={PopularPlaceImage}
-                        alt=""
-                        country="Ukraine"
-                        title="Triumph"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    />
+                    <Slider {...settings}>
+                        { hotels.flatMap((hotel, index) => (
+                            <PopularPlacesSingle key={index}
+                                href="/"
+                                src={'https://picsum.photos/600/300?random='+index}
+                                alt=""
+                                country={hotel.country}
+                                title={hotel.name}
+                            />
+                        ))}
+                    </Slider>
                 </Router>
             </div>
         </div>

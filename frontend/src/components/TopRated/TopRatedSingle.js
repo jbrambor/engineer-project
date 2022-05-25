@@ -23,6 +23,6 @@ const TopRatedSingle = (card) => {
             </Link>
         </div>
     );
-}
+};
 
 export default TopRatedSingle;

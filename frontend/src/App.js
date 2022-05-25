@@ -2,6 +2,7 @@
 import Blog from "components/Blog/Blog";
 import Footer from "components/Footer/Footer";
 import HeaderImage from "components/HeaderImage/HeaderImage";
+import InspirationsPlaces from "components/Inspirations/Inspirations";
 import Navbar from "components/Navbar/Navbar";
 import Newsletter from "components/Newsletter/Newsletter";
 import PopularPlaces from "components/PopularPlaces/PopularPlaces";
@@ -22,6 +23,7 @@ function App() {
             <TopRated />
             <ReccommendedOffers />
             <Blog />
+            <InspirationsPlaces/>
             <PopularPlaces />
             <Newsletter
                 title="Newsletter"

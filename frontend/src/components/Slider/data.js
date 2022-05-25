@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const DisplayHotels = () => {
     const [hotels, setHotels] = useState([]);
@@ -13,8 +13,8 @@ const DisplayHotels = () => {
     
     useEffect(() => GetDataFromAPI('http://fake-hotel-api.herokuapp.com/api/hotels'), []);
     return hotels;
-}    
+};    
 
 export const hotelsData = {
     hotelsInfo: DisplayHotels()
-}
+};

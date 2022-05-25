@@ -19,4 +19,4 @@ function getNextDate() {
 export const currentDates = {
     currentDate: getCurrentDate(),
     nextDate: getNextDate()
-}
+};

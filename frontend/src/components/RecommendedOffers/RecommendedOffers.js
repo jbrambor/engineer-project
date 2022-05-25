@@ -1,12 +1,25 @@
+import axios from "axios";
 import SectionTitle from "components/SectionTitle/SectionTitle";
-import React from "react";
+import { React, useEffect, useState} from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
 import RecommendedSingle from "./RecommendedSingle";
 
-import HotelImage from "../../images/hotel.png";
-
+    
 const ReccommendedOffers = () => {
+    const [hotelSingle, setHotelsMain] = useState([]);
+    const [hotelsFeatured, setHotelsFeatured] = useState([]);
+    const GetDataFromAPI = (endpoint) => {
+        axios.get(`${endpoint}`)
+            .then((response) => {
+                const hotelSingle = response.data.slice(0, 1);
+                const hotelsFeatured = response.data.slice(1, 5);
+                setHotelsMain(hotelSingle);
+                setHotelsFeatured(hotelsFeatured);
+            });
+    }; 
+
+    useEffect(() => GetDataFromAPI('http://fake-hotel-api.herokuapp.com/api/hotels'), []);
     return (
         <div className="container recommended">
             <div className="recommended__title">
@@ -20,58 +33,33 @@ const ReccommendedOffers = () => {
             <div className="recommended__offers">
                 <Router>
                     <div className="first-offer">
-                        <RecommendedSingle
-                            href="/"
-                            src={HotelImage}
-                            alt="offer"
-                            title="Golden Cherry"
-                            price="1785"
-                            value="PLN"
-                            country="Spain"
-                            description="The Golden Cherry is a modern, elegant 4-star hotel overlooking the sea, perfect for a romantic, charming vacation, in the enchanting setting of Taormina and the Ionian Sea.
-
-                        The rooms at the Panoramic Hotel are new, well-lit and inviting. Our reception staff will be happy to help you during your stay in Taormina, suggesting itineraries, guided visits and some good restaurants in the historic centre.
-
-                        At the end of a stairway across from the hotel, the white pebbles on the beach... Read More"
-                        ></RecommendedSingle>
+                        { hotelSingle.flatMap((hotel, index) => (
+                            <RecommendedSingle
+                                href="/"
+                                src={'https://picsum.photos/600/300?random='+index + 50}
+                                alt="offer"
+                                title={hotel.name}
+                                price={hotel.price}
+                                value="PLN"
+                                country={hotel.country}
+                                description={hotel.description}
+                            ></RecommendedSingle>
+                        ))}
+                        
                     </div>
                     <div className="all-offers">
-                        <RecommendedSingle
-                            href="/"
-                            src={HotelImage}
-                            alt="offer"
-                            title="Aquamrais Hotel"
-                            price="1200"
-                            value="PLN"
-                            country="Egypt"
-                        />
-                        <RecommendedSingle
-                            href="/"
-                            src={HotelImage}
-                            alt="offer"
-                            title="Aquamrais Hotel"
-                            price="1200"
-                            value="PLN"
-                            country="Egypt"
-                        />
-                        <RecommendedSingle
-                            href="/"
-                            src={HotelImage}
-                            alt="offer"
-                            title="Aquamrais Hotel"
-                            price="1200"
-                            value="PLN"
-                            country="Egypt"
-                        />
-                        <RecommendedSingle
-                            href="/"
-                            src={HotelImage}
-                            alt="offer"
-                            title="Aquamrais Hotel"
-                            price="1200"
-                            value="PLN"
-                            country="Egypt"
-                        />
+                        { hotelsFeatured.flatMap((hotel, index) => (
+                            <RecommendedSingle key={index}
+                                href="/"
+                                src={'https://picsum.photos/600/300?random='+index}
+                                alt="offer"
+                                title={hotel.name}
+                                price={hotel.price}
+                                value="PLN"
+                                country={hotel.country}
+                            />
+                        ))}
+                        
                     </div>
                 </Router>
             </div>

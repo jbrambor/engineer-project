@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavbarElement = (props) => {
-    return <Link to={props.page}>{ props.pageTitle }</Link>;
+const NavbarElement = (navElement) => {
+    return <Link to={navElement.page}>{ navElement.pageTitle }</Link>;
 };
 
 export default NavbarElement;
