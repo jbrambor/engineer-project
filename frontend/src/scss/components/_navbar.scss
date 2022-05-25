@@ -1,0 +1,17 @@
+.nav {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__left--logo {
+        margin-right: 24px;
+    }
+    &__left--menu,
+    &__right--links {
+        a {
+            margin: 0px 16px;
+        }
+    }
+}

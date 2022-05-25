@@ -1,0 +1,37 @@
+.newsletter {
+    padding: 48px 0px;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__title {
+        h2 {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 0px;
+        }
+    }
+    &__subtitle {
+        p {
+            color: #fff;
+        }
+    }
+    form {
+        display: flex;
+        input {
+            margin: 0px 20px;
+            padding: 16px;
+            border-radius: 8px;
+            border: none;
+            &[type="text"] {
+                border: 1px solid #c6ccd2;
+            }
+            &[type="submit"] {
+                background-color: #e4780c;
+                color: #fff;
+            }
+        }
+    }
+}
