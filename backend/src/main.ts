@@ -1,14 +1,15 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { ConfigService } from '@nestjs/config';
-import * as cookieParser from 'cookie-parser';
+import App from './config/App';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const configService = app.get(ConfigService);
+import { config } from 'dotenv';
 
-  app.use(cookieParser());
+import { HotelController } from './Controllers/hotel.controller';
 
-  await app.listen(configService.get('PORT'));
-}
-bootstrap();
+config();
+
+const app = new App([
+    HotelController,
+]);
+
+const { PORT } = process.env;
+
+app.listen(Number(PORT));
