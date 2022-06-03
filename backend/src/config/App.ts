@@ -2,6 +2,7 @@ import express, { Application, json, urlencoded } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 
 class App {
     private readonly app: Application;
@@ -19,6 +20,7 @@ class App {
         this.app.use(urlencoded({ extended: false }));
         this.app.use(helmet());
         this.app.use(cors({ origin: 'http://localhost:3000' }));
+        this.app.use(cookieParser());
     }
 
     private registerRoutes(controllers): void {
