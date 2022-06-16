@@ -2,7 +2,7 @@ import axios from "axios";
 import SectionTitle from "components/SectionTitle/SectionTitle";
 import { settings } from "components/Slider/settings";
 import { React, useEffect, useState } from "react";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 import PopularPlacesSingle from "./PopularPlacesSingle";
@@ -27,26 +27,22 @@ const PopularPlaces = () => {
         <div className="container popular">
             <div className="popular__title">
                 <SectionTitle name="Popular Places" />
-                <Router>
-                    <Link to="/" className="section-all">
-                        View all
-                    </Link>
-                </Router>
+                <Link to="/" className="section-all">
+                    View all
+                </Link>
             </div>
             <div className="popular__last">
-                <Router>
-                    <Slider {...settings}>
-                        { hotels.flatMap((hotel, index) => (
-                            <PopularPlacesSingle key={index}
-                                href="/"
-                                src={'https://picsum.photos/600/300?random='+index}
-                                alt=""
-                                country={hotel.country}
-                                title={hotel.name}
-                            />
-                        ))}
-                    </Slider>
-                </Router>
+                <Slider {...settings}>
+                    { hotels.flatMap((hotel, index) => (
+                        <PopularPlacesSingle key={index}
+                            href="/"
+                            src={'https://picsum.photos/600/300?random='+index}
+                            alt=""
+                            country={hotel.country}
+                            title={hotel.name}
+                        />
+                    ))}
+                </Slider>
             </div>
         </div>
     );

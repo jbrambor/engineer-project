@@ -1,7 +1,7 @@
 import axios from "axios";
 import SectionTitle from "components/SectionTitle/SectionTitle";
 import { React, useEffect, useState } from "react";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import PopularPlacesSingle from "./InspirationsSingle";
 
@@ -21,25 +21,20 @@ const InspirationsPlaces = () => {
         <div className="container inspirations">
             <div className="inspirations__title">
                 <SectionTitle name="Inspirations" />
-                <Router>
-                    <Link to="/" className="section-all">
-                        View all
-                    </Link>
-                </Router>
+                <Link to="/" className="section-all">
+                    View all
+                </Link>
             </div>
             <div className="inspirations__places">
-                <Router>
-                    { hotels.flatMap((hotel, index) => (
-                        <PopularPlacesSingle key={index}
-                            href="/"
-                            src={'https://picsum.photos/600/300?random='+index}
-                            alt=""
-                            country={hotel.city}
-                            description={hotel.description}
-                        />
-                    ))}
-                   
-                </Router>
+                { hotels.flatMap((hotel, index) => (
+                    <PopularPlacesSingle key={index}
+                        href="/"
+                        src={'https://picsum.photos/600/300?random='+index}
+                        alt=""
+                        country={hotel.city}
+                        description={hotel.description}
+                    />
+                ))} 
             </div>
         </div>
     );

@@ -1,0 +1,19 @@
+.col {
+    width: 100%;
+    margin: 10px 0px;
+    display: flex;
+    input {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $neutral50;
+        background-color: #fff;
+        padding: 16px;
+        color: $neutral30;
+        &[type="submit"] {
+            background-color: $primary60;
+            color: $neutral90;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+}
