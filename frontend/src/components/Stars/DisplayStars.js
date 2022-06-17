@@ -13,7 +13,7 @@ function getStarsCount(stars) {
 
 const DisplayStars = (stars) => {
     let arr = getStarsCount(stars.count);
-    return arr.map((val) => { // here you return the new array created by map
+    return arr.map((val) => { 
         return <CountStars key={val}/>
     });
 };

@@ -1,4 +1,6 @@
+import { currentDates } from "autoParams/currentDate";
 import axios from "axios";
+import Loading from "components/Loading/Loading";
 import SectionTitle from "components/SectionTitle/SectionTitle";
 import { React, useEffect, useState} from "react";
 import { Link } from "react-router-dom";
@@ -7,19 +9,37 @@ import RecommendedSingle from "./RecommendedSingle";
 
     
 const ReccommendedOffers = () => {
+    const exampleLocations = [
+        '-1746443', 
+        '-1456928', 
+        '529430',
+        '-390625'
+    ]
+    function randomLocation() {
+        let selectedLocation = exampleLocations[Math.floor(Math.random()*5)];
+
+        return selectedLocation;
+    }
     const [hotelSingle, setHotelsMain] = useState([]);
     const [hotelsFeatured, setHotelsFeatured] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const GetDataFromAPI = (endpoint) => {
+        setIsLoading(true);
         axios.get(`${endpoint}`)
             .then((response) => {
-                const hotelSingle = response.data.slice(0, 1);
-                const hotelsFeatured = response.data.slice(1, 5);
+                const hotelSingle = response.data.result.slice(0, 1);
+                const hotelsFeatured = response.data.result.slice(1, 5);
                 setHotelsMain(hotelSingle);
                 setHotelsFeatured(hotelsFeatured);
+                setIsLoading(false);
             });
     }; 
+   
+    const checkinDate = currentDates.currentDate;
+    const checkoutDate = currentDates.nextDate;
+    const randomDestId = randomLocation();
+    useEffect(() => GetDataFromAPI(`http://localhost:8000/hotels/search/en-gb/${checkoutDate}/${checkinDate}/${randomDestId}/2/1`), []);
 
-    useEffect(() => GetDataFromAPI('http://fake-hotel-api.herokuapp.com/api/hotels'), []);
     return (
         <div className="container recommended">
             <div className="recommended__title">
@@ -28,32 +48,33 @@ const ReccommendedOffers = () => {
                     View all
                 </Link>
             </div>
+            {isLoading && hotelSingle.length === 0 ? <Loading/> : ''}
             <div className="recommended__offers">
                 <div className="first-offer">
+                    
                     { hotelSingle.flatMap((hotel, index) => (
-                        <RecommendedSingle
-                            href="/"
-                            src={'https://picsum.photos/600/300?random='+index + 50}
+                        <RecommendedSingle key={index}
+                            href={'/hotel/' + hotel.hotel_id}
+                            src={hotel.max_photo_url}
                             alt="offer"
-                            title={hotel.name}
-                            price={hotel.price}
-                            value="PLN"
-                            country={hotel.country}
-                            description={hotel.description}
+                            title={hotel.hotel_name}
+                            price={hotel.min_total_price.toFixed(2)}
+                            value={hotel.currencycode}
+                            country={hotel.country_trans}
+                            // description={hotel.description}
                         ></RecommendedSingle>
                     ))}
-                    
                 </div>
                 <div className="all-offers">
                     { hotelsFeatured.flatMap((hotel, index) => (
                         <RecommendedSingle key={index}
-                            href="/"
-                            src={'https://picsum.photos/600/300?random='+index}
+                            href={'/hotel/' + hotel.hotel_id}
+                            src={hotel.max_photo_url}
                             alt="offer"
-                            title={hotel.name}
-                            price={hotel.price}
-                            value="PLN"
-                            country={hotel.country}
+                            title={hotel.hotel_name}
+                            price={hotel.min_total_price.toFixed(2)}
+                            value={hotel.currencycode}
+                            country={hotel.country_trans}
                         />
                     ))}
                     

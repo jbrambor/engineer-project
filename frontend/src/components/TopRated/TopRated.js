@@ -1,5 +1,6 @@
 import { currentDates } from "autoParams/currentDate";
 import axios from "axios";
+import Loading from "components/Loading/Loading";
 import SectionTitle from "components/SectionTitle/SectionTitle";
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -15,12 +16,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TopRated = () => {
     const [hotels, setHotels] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const GetDataFromAPI = (endpoint) => {
+        setIsLoading(true);
         axios.get(`${endpoint}`)
             .then((response) => {
                 const hotelsResults = response.data.result;
                 setHotels(hotelsResults);
-                console.log(hotelsResults);
+                setIsLoading(false);
             });
     }; 
     const checkinDate = currentDates.currentDate;
@@ -35,6 +38,7 @@ const TopRated = () => {
                 </Link>
             </div>
             <div className="promoted__slider">
+                {isLoading ? <Loading/> : ''}
                 <Slider {...settings} >
                     { 
                         hotels.flatMap((hotel, index) => (
