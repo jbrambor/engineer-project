@@ -1,5 +1,7 @@
 import axios from "axios";
 import HeaderImage from "components/HeaderImage/HeaderImage";
+import Loading from "components/Loading/Loading";
+import DisplayStars from "components/Stars/DisplayStars";
 import HeaderImg from "images/map.jpeg";
 import { React, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
@@ -13,13 +15,15 @@ const HotelSingle = () => {
     const params = useParams();
     const [hotel, setHotel] = useState([]);
     const [descriptions, setDescriptions] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const GetDataFromAPI = (endpoint) => {
+        setIsLoading(true);
         axios.get(`${endpoint}`)
             .then((response) => {
                 const hotelResults = response.data;
-                console.log(hotelResults);
                 setHotel(hotelResults);
                 setDescriptions(response.data.description_translations);
+                setIsLoading(false);
             });
     }; 
 
@@ -49,8 +53,8 @@ const HotelSingle = () => {
 
     return (
         <div className="single-hotel hotel">
+            { isLoading ? <Loading/> : ''}
             <HeaderImage src={HeaderImg} alt="" />
-            
             <div className="container">
                 <div className="hotel__location">
                     <span className="hotel__location--address">
@@ -70,7 +74,7 @@ const HotelSingle = () => {
                     </div>
                     <div className="col scores">
                         <div className="hotel__data--stars">
-                            *****
+                            <DisplayStars count={hotel.review_score / 2}/>
                         </div>
                         <div className="hotel__data--reviews">
                             <span>
