@@ -1,11 +1,18 @@
+@import './scss/variables/variables';
+
 @import "./scss/components/navbar";
 @import "./scss/components/header";
 @import "./scss/components/newsletter";
 @import "./scss/components/footer";
+@import "./scss/components/inputs";
 
 @import "./scss/pages/homepage";
+@import "./scss/pages/hotel";
+@import "./scss/pages/account";
 
 .container {
+    padding-left: 15px;
+    padding-right: 15px;
     max-width: 1320px;
     margin-left: auto;
     margin-right: auto;
@@ -29,4 +36,18 @@ a {
 
 .active {
     color: red;
+}
+
+.slick-prev {
+    transform: rotate(-180deg) translateY(9.7px);
+}
+
+.slick-slider {
+    .slick-slide {
+        justify-content: center;
+    }
+}
+
+.slick-list {
+    padding-bottom: 20px;
 }
