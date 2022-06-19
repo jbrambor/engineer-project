@@ -10,6 +10,32 @@
 testing on:
 - locale: en-gb
 - hotel_id: 1676161
+
+### POST Register
+```js
+http://localhost:8000/auth/register****
+```
+
+### POST Login
+```js
+http://localhost:8000/auth/login****
+```
+
+### POST Logout
+```js
+http://localhost:8000/auth/logout****
+```
+
+```js
+body: {
+  email: string,
+  password: string,
+}
+
+```
+
+----------------------------------------------------------------
+
 ### GET facilities
 ```js
 http://localhost:8000/hotels/facilities/:locale/:hotel_id****
