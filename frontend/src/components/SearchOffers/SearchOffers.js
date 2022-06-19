@@ -1,7 +1,9 @@
+import { LocalizationProvider } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import { SearchInputs } from 'components/SearchOffers/SearchInputs';
 import { theme } from "modules/uiTheme/theme";
 import React from "react";
 
-import SearchInput from "./SearchInputs";
 import SearchSubmit from "./SearchSubmit";
 
 const SearchBar = () => {
@@ -15,10 +17,10 @@ const SearchBar = () => {
             >
                 <form>
                     <div className="search__data">
-                        <SearchInput type="text" placeholder="Location" />
-                        <SearchInput type="text" placeholder="Check In" />
-                        <SearchInput type="text" placeholder="Check Out" />
-                        <SearchInput type="text" placeholder="Check Guests" />
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <SearchInputs/>
+                        </LocalizationProvider>
+                        
                     </div>
                     <div className="search__submit">
                         <SearchSubmit type="submit" value="Search" />
