@@ -32,7 +32,7 @@ export const settings = {
             }
         },
         {
-            breakpoint: 667,
+            breakpoint: 700,
             settings: {
                 slidesToShow: 1,
             }

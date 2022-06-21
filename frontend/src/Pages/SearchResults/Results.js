@@ -29,7 +29,9 @@ const SearchResults = () => {
             });
     }; 
     useEffect(() => GetDataFromAPI(`http://localhost:8000/hotels/search/en-gb/${checkoutDate}/${checkInDate}/${destID}/${guests}/${rooms}`), []);
-    
+    function renderToHTML(element) {
+        return {__html: element};
+    }
     return (
         <div className="results">
             <HeaderImage src={HeaderImg} alt="" />
@@ -43,6 +45,7 @@ const SearchResults = () => {
                 { isLoading ? <Loading/> : '' }
                 { hotels.flatMap((hotel, index) => (
                     <ResultCard key={index}
+                        url={`/hotel/${hotel.hotel_id}`}
                         src={hotel.max_photo_url} 
                         alt={hotel.hotel_name}
                         hotel={hotel.hotel_name}
@@ -51,8 +54,9 @@ const SearchResults = () => {
                         review_count={hotel.review_nr}
                         price={hotel.min_total_price.toFixed(2)}
                         currency={hotel.currencycode}
-                        description={hotel.unit_configuration_label}
-                        dangerouslySetInnerHTML={{ __html: hotel.unit_configuration_label }}
+                        dangerouslySetInnerHTML={ renderToHTML(hotel.unit_configuration_label) }
+                        description={hotel.distances[0].text}
+                        
                     />
                 ))
                 }

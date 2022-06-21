@@ -7,13 +7,24 @@
             flex-direction: row;
             justify-content: space-between;
             margin-bottom: 72px;
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+            }
             &-menu_group {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 min-width: 549px;
+                @media (max-width: 768px) {
+                    max-width: max-content;
+                    flex-wrap: wrap;
+                }
             }
-
+            &-menu {
+                @media (max-width: 768px) {
+                    margin: 10px 20px;
+                }
+            }
             &-menu {
                 margin: 0;
                 padding: 0;
@@ -44,6 +55,9 @@
             }
 
             &-contact {
+                @media (max-width: 768px) {
+                    margin: 10px 20px;
+                }
                 &_title {
                     color: #fff;
                     text-transform: uppercase;
@@ -102,10 +116,16 @@
             -webkit-box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
             -moz-box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
             box-shadow: inset 0px 2px 0px 0px rgb(255, 255, 255);
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+            }
             &-copyright {
                 font-size: 12px;
                 line-height: 16px;
                 color: #f9fafa;
+                @media (max-width: 768px) {
+                    margin-bottom: 20px;
+                }
             }
             &-terms {
                 display: flex;
@@ -116,6 +136,12 @@
                 margin: 0;
                 padding: 0;
                 list-style: none;
+                @media (max-width: 768px) {
+                    margin-top: 10px;
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
                 &-single_term {
                     font-size: 12px;
                     line-height: 16px;
