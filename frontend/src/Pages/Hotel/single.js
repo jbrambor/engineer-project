@@ -3,7 +3,7 @@ import HeaderImage from "components/HeaderImage/HeaderImage";
 import Loading from "components/Loading/Loading";
 import DisplayStars from "components/Stars/DisplayStars";
 import HeaderImg from "images/map.jpeg";
-import { React, useEffect, useState} from "react";
+import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import MainPhoto from "./MainPhoto";
@@ -34,8 +34,7 @@ const HotelSingle = () => {
                 const hotelGallery = response.data.slice(0,5);
                 setPhotos(hotelGallery);
             });
-        
-    }
+    };
 
     const [facilities, setFacilities] = useState([]);
     const GetHotelFacilities = (endpoint) => {
@@ -44,32 +43,31 @@ const HotelSingle = () => {
                 const hotelFacilities = response.data;
                 console.log(hotelFacilities);
                 setFacilities(hotelFacilities);
-            })
-    }
+            });
+    };
 
     useEffect(() => GetDataFromAPI(`http://localhost:8000/hotels/data/en-gb/${params.hotelID}`), []);
     useEffect(() => GetHotelGallery(`http://localhost:8000/hotels/photos/en-gb/${params.hotelID}`), []);
     useEffect(() => GetHotelFacilities(`http://localhost:8000/hotels/facilities/en-gb/${params.hotelID}`), []);
-
     return (
         <div className="single-hotel hotel">
-            { isLoading ? <Loading/> : ''}
+            { isLoading ? <Loading/> : '' }
             <HeaderImage src={HeaderImg} alt="" />
             <div className="container">
                 <div className="hotel__location">
                     <span className="hotel__location--address">
-                        {hotel.city}, {hotel.country}
+                        { hotel.city }, { hotel.country }
                     </span>
                 </div>
                 <div className="hotel__data">
                     <div className="col">
                         <div className="hotel__data--name">
                             <h1>
-                                {hotel.name}
+                                { hotel.name }
                             </h1>
                         </div>
                         <div className="hotel__data--icons">
-                            {/* ikony */}
+                            { /* ikony */ }
                         </div>
                     </div>
                     <div className="col scores">
@@ -78,10 +76,10 @@ const HotelSingle = () => {
                         </div>
                         <div className="hotel__data--reviews">
                             <span>
-                                ({hotel.review_nr} reviews)
+                                ({ hotel.review_nr } reviews)
                             </span>
                             <span className="score">
-                                {hotel.review_score}/10
+                                { hotel.review_score }/10
                             </span>
                         </div>
                     </div>
@@ -97,20 +95,20 @@ const HotelSingle = () => {
                     <h2>
                         Description
                     </h2>
-                    {descriptions.map(description => (
+                    { descriptions.map(description => (
                         <p key={description.id}>
-                            {description.description}
+                            { description.description }
                         </p>
-                    ))}
+                    )) }
                     <h2>
                         Facilities
                     </h2>
                     <ul>
-                        {facilities.map(facility => (
+                        { facilities.map(facility => (
                             <li key={facility.id}>
-                                {facility.facility_name}
+                                { facility.facility_name }
                             </li>
-                        ))}
+                        )) }
 
                     </ul>
                 </div>

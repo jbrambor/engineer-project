@@ -1,6 +1,18 @@
 .login, .register {
     display: flex;
     justify-content: space-between;
+    .error {
+        text-align: center;
+        width: 100%;
+        color: $error60;
+    }
+    .info, .success {
+        text-align: center;
+        width: 100%;
+    }
+    .success {
+        color: $success40;
+    }
     &__data {
         display: flex;
         flex-direction: column;

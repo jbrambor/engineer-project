@@ -1,8 +1,10 @@
+import SearchBar from "components/SearchOffers/SearchOffers";
 import React from "react";
 
 const BlogArchive = () => {
     return (
         <div className="container blog">
+            <SearchBar/>
             <h1>
                 Blog
             </h1>

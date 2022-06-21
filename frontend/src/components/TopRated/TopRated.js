@@ -29,6 +29,7 @@ const TopRated = () => {
     const checkinDate = currentDates.currentDate;
     const  checkoutDate = currentDates.nextDate;
     useEffect(() => GetDataFromAPI(`http://localhost:8000/hotels/search/en-gb/${checkoutDate}/${checkinDate}/-534433/2/1`), []);
+    console.log(`http://localhost:8000/hotels/search/en-gb/${checkoutDate}/${checkinDate}/-534433/2/1`);
     return (
         <div className="container promoted">
             <div className="promoted__title">
