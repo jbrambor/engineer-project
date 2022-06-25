@@ -62,3 +62,72 @@
         }
     }
 }
+
+
+// blog cards
+.blog {
+    &-all {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        .post {
+            flex: 0 0 30%;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            position: relative;
+            
+            @media (max-width: 991px) {
+                flex: 1 1 400px;
+            }
+            border-bottom: 1px solid $neutral40;
+            &__thumbnail {
+                width: 100%;
+                max-height: 200px;
+                overflow: hidden;
+                border-radius: 6px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: .5s;
+                    
+                }
+            }
+            &__description {
+                margin-bottom: 60px;
+            }
+            &__button {
+                padding: 10px 0px;
+                position: absolute;
+                bottom: 10px;
+                right: 0px;
+                &--btn {
+                    color: $neutral80;
+                    background-color: $primary60;
+                    font-size: 18px;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    margin: 20px 0px;
+                    font-weight: 700;
+                }
+            }
+            
+            &:hover {
+                &__thumbnail {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.post__back {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: underline;
+}
