@@ -1,6 +1,7 @@
 .footer {
     padding: 56px 0;
     color: #fff;
+    transition: background-color .5s;
     &__content {
         &--main {
             display: flex;

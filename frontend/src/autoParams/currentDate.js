@@ -1,6 +1,7 @@
+let currentDate = new Date();
 function getCurrentDate() {
-    let newDate = new Date();
-    let day = newDate.getDate() +2;
+    let newDate = new Date(currentDate.getTime() + 86400000);
+    let day = newDate.getDate();
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
 
@@ -8,8 +9,8 @@ function getCurrentDate() {
 }
 
 function getNextDate() {
-    let newDate = new Date();
-    let day = newDate.getDate() + 3;
+    let newDate = new Date(currentDate.getTime() + 3 * 86400000);
+    let day = newDate.getDate();
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
 
