@@ -1,4 +1,5 @@
 // import {theme} from 'modules/uiTheme/theme';
+import { ThemeContext } from "@emotion/react";
 import Footer from "components/Footer/Footer";
 import Navbar from "components/Navbar/Navbar";
 import AboutUsPage from "Pages/AboutUs/About";
@@ -11,14 +12,29 @@ import LoginPage from "Pages/Login/Login";
 import LogOut from "Pages/Logout/Logout";
 import RegisterPage from "Pages/Register/Register";
 import SearchResults from "Pages/SearchResults/Results";
-import React from "react";
+import {useState, React} from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
-
 import "./App.scss";
 
 function App() {
+    
+    const [darkTheme, setDarkTheme] = useState(localStorage.getItem('theme') ? true : false);
+    const switchTheme = () => {
+        darkTheme === true 
+            ? setDarkTheme(false)
+            : setDarkTheme(true)
+        if (localStorage.getItem('theme')) {
+            localStorage.removeItem('theme');
+        }
+        else {
+            localStorage.setItem('theme', 'dark')
+        }
+    }
+
+    
+        
     return (
-        <div className="App">
+        <div className={`App ${darkTheme ? 'dark-theme' : ''}`}>
             <Router>
                 <Navbar />
                 <Routes>
@@ -39,7 +55,15 @@ function App() {
             </Router>
             
             <Footer />
-            
+            <ThemeContext.Provider value={darkTheme}>
+                <div className="switch-theme">
+                    <button 
+                        onClick={switchTheme}
+                    >
+                        Night Mode
+                    </button>
+                </div>
+            </ThemeContext.Provider>
         </div>
     );
 }
