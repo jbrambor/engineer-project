@@ -16,7 +16,7 @@ const ReccommendedOffers = () => {
         '-390625'
     ]
     function randomLocation() {
-        let selectedLocation = exampleLocations[Math.floor(Math.random()*5)];
+        let selectedLocation = exampleLocations[Math.floor(Math.random()*4)];
 
         return selectedLocation;
     }
@@ -42,13 +42,15 @@ const ReccommendedOffers = () => {
 
     return (
         <div className="container recommended">
-            <div className="recommended__title">
-                <SectionTitle name="Selected for you" />
-                <Link to="/" className="section-all">
-                    View all
-                </Link>
-            </div>
-            {isLoading && hotelSingle.length === 0 ? <Loading/> : ''}
+            { hotelSingle ? 
+                <div className="recommended__title">
+                    <SectionTitle name="Selected for you" />
+                    <Link to="/" className="section-all">
+                        View all
+                    </Link>
+                </div>
+                : ''}
+            {isLoading ? <Loading/> : ''}
             <div className="recommended__offers">
                 <div className="first-offer">
                     

@@ -4,8 +4,6 @@ import { SearchInputs } from 'components/SearchOffers/SearchInputs';
 import { theme } from "modules/uiTheme/theme";
 import React from "react";
 
-import SearchSubmit from "./SearchSubmit";
-
 const SearchBar = () => {
     return (
         <div className="container">
@@ -21,9 +19,6 @@ const SearchBar = () => {
                             <SearchInputs/>
                         </LocalizationProvider>
                         
-                    </div>
-                    <div className="search__submit">
-                        <SearchSubmit type="submit" value="Search" />
                     </div>
                 </form>
             </div>

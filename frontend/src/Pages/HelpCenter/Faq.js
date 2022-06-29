@@ -2,7 +2,7 @@ import React from "react";
 
 const HelpCenter = () => {
     return (
-        <div className="container blog">
+        <div className="container faq">
             <h1>
                 FAQ
             </h1>

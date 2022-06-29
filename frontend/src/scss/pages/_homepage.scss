@@ -1,35 +1,3 @@
-.search {
-    margin-top: -100px;
-    height: 200px;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 20px;
-    box-shadow: 0px 16px 32px -4px rgba(68, 88, 105, 0.24);
-    margin-bottom: 72px;
-    &__data {
-        display: flex;
-    }
-    &__data--input {
-        border-radius: 8px;
-        border: 1px solid #c6ccd2;
-        padding: 16px;
-        margin: 0px 12px;
-    }
-    &__submit--button {
-        border-radius: 8px;
-        border: none;
-        padding: 22px;
-        margin: 0px 12px;
-        text-transform: uppercase;
-        min-width: 150px;
-    }
-    form {
-        display: flex;
-        align-items: center;
-    }
-}
 
 .promoted,
 .recommended {
@@ -48,6 +16,9 @@
             overflow: hidden;
             border-radius: 8px;
             border: 1px solid #c6ccd2;
+            @media (max-width: 674px) {
+                max-width: 100%;
+            }
             .card-img {
                 max-height: 175px;
                 min-height: 175px;
@@ -124,10 +95,16 @@
     &__offers {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 991px) {
+            flex-wrap: wrap;
+        }
         .first-offer {
             flex: 0 0 647px;
             margin-right: 24px;
             margin-bottom: 24px;
+            @media (max-width: 991px) {
+                flex: 0 0 100%;
+            }
             .recommended__slider--card {
                 max-width: 100%;
                 height: 100%;
@@ -144,70 +121,8 @@
     }
 }
 
-.blog,
-.popular {
-    &__title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__last {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 40px;
-        &--card {
-            max-width: 312px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #c6ccd2;
-            overflow: hidden;
-            margin-bottom: 24px;
-            .card-img {
-                max-height: 175px;
-                overflow: hidden;
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
-            .card-category,
-            .card-title,
-            .card-description,
-            .card-button,
-            .card-country {
-                padding: 0px 24px;
-            }
-            .card-category {
-                margin-top: 16px;
-                span {
-                    border-radius: 32px;
-                    border: 1px solid #b3d7fb;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    background-color: #f5faff;
-                    padding: 8px 16px;
-                }
-            }
-            .card-button {
-                margin: 16px 0px;
-                height: 54px;
-                text-transform: uppercase;
-                display: flex;
-                a {
-                    color: #105293;
-                    font-weight: 700;
-                    padding: 16px;
-                }
-            }
-        }
-    }
-}
-
 .popular__last {
-    display: block;
+    display: block!important;
 }
 
 .card-title {
